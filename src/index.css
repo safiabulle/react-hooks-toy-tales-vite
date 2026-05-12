@@ -1,13 +1,17 @@
 body {
   margin: 0;
   font-family: monospace;
+  background-color: #f5f5f5;
 }
+
+/* HEADER */
 
 #toy-header {
   display: flex;
   justify-content: center;
+  align-items: center;
   background: #515da2;
-  opacity: 0.8;
+  opacity: 0.95;
   height: 7rem;
   padding: 1rem;
 }
@@ -17,42 +21,83 @@ body {
   width: auto;
 }
 
-#toy-collection {
-  margin: 2rem;
+/* TOY COLLECTION */
+
+#toy-collection,
+.toy-container {
+  margin: 2rem auto;
+  padding: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
+
+/* CARD */
 
 .card {
+  background: white;
   text-align: center;
-  border: grey solid 1px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+
   padding: 1rem;
-  width: 15rem;
-  height: 25rem;
-  display: inline-grid;
-  margin: 1rem 2rem;
+
+  width: 250px;
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   box-shadow: 3px 4px #e04b52;
+
+  transition: 0.3s ease;
 }
 
-.toy-avatar {
-  justify-self: center;
-  height: 12rem;
-  width: auto;
+.card:hover {
+  transform: translateY(-5px);
 }
+
+/* IMAGE */
+
+.card img,
+.toy-avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* TEXT */
+
+.card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* BUTTONS */
 
 button {
-  position: relative;
   background-color: #e04b52;
   border: none;
   border-radius: 5px;
-  height: 3rem;
-  width: max-content;
-  color: whitesmoke;
-  font-size: 18px;
-  justify-self: center;
-}
 
-.buttonContainer {
-  text-align: center;
-  padding: 1rem;
+  padding: 0.7rem 1rem;
+
+  color: whitesmoke;
+  font-size: 16px;
+  cursor: pointer;
+
+  margin: 0.3rem;
+  transition: 0.3s ease;
 }
 
 button:hover {
@@ -61,42 +106,67 @@ button:hover {
   color: #e04b52;
 }
 
+/* FORM CONTAINER */
+
 .container {
-  padding: 1rem;
-  width: stretch;
-  height: auto;
+  padding: 1.5rem;
   background: #515da2;
-  opacity: 0.8;
+  opacity: 0.95;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* FORM */
 
 .add-toy-form {
-  width: 80%;
+  width: 100%;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* INPUTS */
+
+.input-text {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+
+  height: 2.5rem;
+  width: 100%;
+  max-width: 500px;
+
+  font-size: 16px;
+  font-family: monospace;
+
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+}
+
+/* SUBMIT BUTTON */
+
 .submit {
-  position: relative;
   background-color: #e04b52;
   border-radius: 5px;
-  height: 2rem;
-  width: max-content;
+
+  padding: 0.7rem 1.2rem;
+
   color: whitesmoke;
-  font-size: 18px;
-  justify-self: center;
+  font-size: 16px;
   font-family: monospace;
-  margin: 3px;
+
+  border: none;
+  cursor: pointer;
+
+  margin-top: 1rem;
+  transition: 0.3s ease;
 }
 
 .submit:hover {
   background-color: whitesmoke;
   border: #e04b52 solid 1px;
   color: #e04b52;
-}
-
-.input-text {
-  border-radius: 5px;
-  height: 2rem;
-  width: 60%;
-  font-size: 18px;
-  font-family: monospace;
-  margin: 3px;
 }
